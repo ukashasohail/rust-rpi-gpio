@@ -4,10 +4,18 @@
 
 use std::fs::File;
 
+use rust_gpiozero::*;
+
 #[get("/")]
 fn index() -> File{
-    // "Hello, world!"
-    File::open("src/index.html").expect("File not  Found")
+
+    let mut led =  LED::new(17);
+    led.blink(2.0,3.0);
+
+    led.wait();
+    
+    "Hello, world!"
+    // File::open("src/index.html").expect("File not  Found")
 }
 
 fn main() {

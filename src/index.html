@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>IoT Server by UK</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+          }
+          
+          .button1 {
+            background-color: green; 
+            color: white; 
+            border: 2px solid white;
+          }
+          
+          .button1:hover {
+            background-color: white ;
+            color: black;
+            border: 2px solid black;
+          
+          }
+          
+          .button2 {
+            background-color: red; 
+            color: white; 
+            border: 2px solid white;
+          }
+          
+          .button2:hover {
+            background-color: white ;
+            color: black;
+            border: 2px solid black;
+          
+          }
+          h1{
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+              font-size: 80px;
+              color: aliceblue
+          }
+          body{
+              background-color: black
+          }
+              </style>
+
+
+
 </head>
+
 <body>
-    <h1>hello world</h1>
+    <h1>IoT Edge</h1>
+
+    <button class="button button1" onclick="location.href='/lighton'" type="button"> Turn On Light</button>
+    <button class="button button2" onclick="location.href='/lightoff'" type="button"> Turn Off Light</button>
+
+
 </body>
+
 </html>

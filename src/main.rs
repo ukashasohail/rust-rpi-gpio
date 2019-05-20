@@ -3,21 +3,42 @@
 #[macro_use] extern crate rocket;
 
 use std::fs::File;
+use rocket::response::Redirect;
 
-use rust_gpiozero::*;
+// use rust_gpiozero::*;
 
 #[get("/")]
 fn index() -> File{
 
-    let mut led =  LED::new(17);
-    led.blink(2.0,3.0);
+    // let mut led =  LED::new(17);
+    // led.blink(2.0,3.0);
 
-    led.wait();
+    // led.wait();
     
-    "Hello, world!"
-    // File::open("src/index.html").expect("File not  Found")
+    // "Hello, world!"
+    File::open("src/index.html").expect("File not  Found")
 }
 
+#[get("/lighton")]
+fn lighton()-> Redirect{
+        let mut led =  LED::new(17);
+        led.off();
+        Redirect::to("/")
+        
+
+}
+
+#[get("/lightoff")]
+fn lightoff()-> Redirect{
+        let mut led =  LED::new(17);
+        led.on();
+        Redirect::to("/")
+
+
+}
+
+
 fn main() {
-    rocket::ignite().mount("/", routes![index]).launch();
+    rocket::ignite().mount("/", routes![index,lighton,lightoff]).launch();
+  
 }

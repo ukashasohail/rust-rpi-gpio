@@ -23,8 +23,7 @@ fn index() -> File{
 fn lighton()-> Redirect{
         let mut led =  LED::new(17);
         led.off();
-        Redirect::to("/")
-        
+        Redirect::to("/") //this will redirect to root
 
 }
 

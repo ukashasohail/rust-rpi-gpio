@@ -5,5 +5,5 @@ authors = ["ukasha <ukasha909@outlook.com>"]
 edition = "2018"
 
 [dependencies]
-rocket="0.4.1"
+rocket="0.4.7"
 rust_gpiozero = "0.2.0"
